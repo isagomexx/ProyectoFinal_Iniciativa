@@ -1,0 +1,31 @@
+#body {
+    background: -webkit-linear-gradient(left, #6fa8fd, #7a99ff);
+}
+
+#registroModal {
+    background-color: white;
+    color: rgb(9, 59, 224);
+    margin-left: 1120px;
+    margin-top: -125px
+}
+
+.card-title {
+    color: rgb(252, 252, 252);
+    font-weight: 750;
+}
+
+.card-header {
+    background: -webkit-linear-gradient(left, #77c4f8, #b2c3fc);
+}
+
+.btnPencil {
+    color: rgb(245, 244, 247);
+    background-color: rgb(132, 107, 243);
+}
+
+#atras {
+    margin-left: -90px;
+    padding: 10px;
+    width: 60px;
+    margin-top: 35px;
+}

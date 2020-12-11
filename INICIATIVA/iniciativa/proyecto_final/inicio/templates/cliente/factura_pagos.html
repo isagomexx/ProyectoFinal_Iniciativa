@@ -1,0 +1,68 @@
+{% load static %}{% include "inicio/includes/navbar_cliente.html" %}
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel=stylesheet href="{% static 'css/pag.css' %}" type="text/css">
+
+    <title>Pagos</title>
+    <link rel="icon" href="{% static 'imagenes/Iniciativa.png' %}" type="image/png" />
+</head>
+
+<body>
+
+
+
+
+
+    <div class='container p-4'>
+        <div class="contenedor2">
+            <a href="/plataforma_cliente"><img class="atras" src="{% static 'imagenes/atras.png' %}"></a>
+
+        </div>
+    </div>
+    <div class='container ' style='background-color:rgb(237, 234, 241);width:1090px '>
+        <center>
+            <h5 class="card-title" style='color:black;margin-top:20px'>Cada una de las consignaciones que realices estaran registradas aqui. </h5>
+
+        </center><br>
+    </div>
+    <div class=' container p-4 '>
+
+        <table class="table table-bordered table-sm" style='background: linear-gradient(#ffffffd3, #ffffffd5) '>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" class="text-center">Nombre de proyecto</th>
+                    <th scope="col" class="text-center">Numero de cuenta</th>
+                    <th scope="col" class="text-center">Destinatario</th>
+                    <th scope="col" class="text-center">Fecha y hora</th>
+                    <th scope="col" class="text-center">Valor</th>
+                    <th scope="col" class="text-center">Opcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for P in object_list %}{% for p in proyecto %}{% for pro in profesional %} {% if P.proyecto.id_proyecto == p.id_proyecto%}{% if P.destinatario == pro.numero_cuenta%}
+                    <td scope="row">{{forloop.counter}} </td>
+                    <td class="text-center">{{P.proyecto.nombre_proyecto}}</td>
+                    <td class="text-center">{{P.destinatario}}</td>
+                    <td class="text-center">{{pro.nombre_profesional}} {{pro.apellido_paterno}} {{pro.apellido_materno}}</td>
+                    <td class="text-center ">{{P.fecha}}</td>
+                    <td class="text-center ">{{P.precio}}</td>
+                    <td class="text-center "> <a type="button" class="btn btnPencil " href="/eliminar_pago/{{P.id_pago}}"><i class="fas fa-trash-alt" style='color:red '></i></a></td>
+
+                </tr>
+                {% endif %} {% endif %} {%endfor%} {%endfor%} {%endfor%}
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

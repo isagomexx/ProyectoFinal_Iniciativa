@@ -1,0 +1,88 @@
+body {
+    font-family: 'Roboto';
+    background-image: url('../imagenes/RolRegCli.png')!important;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    text-decoration-color: black;
+    font-size: 43px;
+    font: oblique bold 200% cursive;
+    /*background: -webkit-linear-gradient(#88FFF9, #1e37f2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+*/
+}
+
+.logo {
+    padding: 10px;
+    margin: 10px;
+    float: left;
+    height: 120px;
+}
+
+.cuadro1 {
+    padding: 40px 0;
+    box-shadow: 1px 3px 10px rgb(188 142 202);
+    border-radius: 10px;
+    position: relative;
+    width: 330px;
+    height: 450px;
+    background-color: rgba(255, 255, 255, 0.89);
+    font: oblique bold 120% cursive;
+    /*background-color: rgba(12, 22, 102, 0.8);*/
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin: 50px;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.form {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    top: 24px;
+}
+
+.botonM {
+    font-family: 'roboto';
+    background: #4568DC;
+    background: linear-gradient(to right, #854bc5, #1e37f2);
+    border-radius: 20px;
+    display: block;
+    width: 70%;
+    margin: 76px auto;
+    color: #fff;
+    height: 46px;
+    width: 130px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1.8px solid #fff;
+    font: oblique bold 100% cursive;
+}
+
+button {
+    font-family: 'roboto';
+    background: #4568DC;
+    background: linear-gradient(to right, #9b66d3, #4d5feb);
+    border-radius: 20px;
+    display: block;
+    width: 80%;
+    margin: 25px auto;
+    color: #fff;
+    height: 45px;
+    width: 200px;
+    cursor: pointer;
+    border: 1.8px solid #fff;
+    font: oblique bold 100% cursive;
+}

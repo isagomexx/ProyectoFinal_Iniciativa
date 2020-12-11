@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <title>Bienvenido a Iniciativa</title>
+    <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css " integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO " crossorigin="anonymous ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <link rel="stylesheet " href="https://use.fontawesome.com/releases/v5.6.1/css/all.css " integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP " crossorigin="anonymous ">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/registroCliente.css' %}" type="text/css " media=" ">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+</head>
+
+<div class="container register">
+
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="{% static 'imagenes/ini_.png' %}" alt="" />
+            <h3>Bienvenido</h3>
+            <p>¡convierte tu proyecto en una realidad con ayuda de profesionales!</p>
+            <button type="button " class='btn' onclick="location.href=' /registro_rol '">Regresar</button>
+            <br/>
+        </div>
+
+        <div class="col-md-8 register-right">
+
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"> Personal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Proyecto</a>
+                </li>
+            </ul>
+            <form method='POST'>
+
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Registro Cliente</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {{form.cliente.nro_doc_cliente}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.cliente.nombre_cliente}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.cliente.apellido_paterno}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.cliente.apellido_materno}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.userCliente.username}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.userCliente.password1}}
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="maxl">
+                                        <div class='form-group '>
+                                            {{form.userCliente.first_name}}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{form.cliente.telefono}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.cliente.ocupacion}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.cliente.sexo}}
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+
+
+                                            </i>
+                                        </div>
+                                        {{form.cliente.fecha_nacimiento}}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    {{form.cliente.correo_electronico}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.userCliente.password2}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3 class="register-heading">Registro del proyecto</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{form.proyecto.nombre_proyecto}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.proyecto.descripcion}}
+                                </div>
+                                <div class="form-group">
+                                    {{form.proyecto.tipo_servicio}}
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{form.proyecto.precio_propuesto}}
+                                </div>
+                                <div class="form-group">
+
+                                    {{form.proyecto.persona_solicitada}}
+                                </div>
+                                <div class="form-group">
+                                    <label><strong>Tipo de proyecto</strong></label> {{form.proyecto.tipo_proyecto}}
+
+                                </div>
+
+
+                                <input type="submit" class="btnRegister" value="Registrar" />
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                    <small class='text-danger '>
+                        {% if form.errors %}
+                        {% for field in form %}
+                            {% if field.errors %}
+                            {% for error in field.errors %}<div class='container col-md-6 '><div class="alert alert-danger">{{ error|escape }}</div></div>{% endfor%}
+        
+                            {% endif %}
+                        {% endfor %}
+                        {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}<div class='container col-md-6 '><div class="alert alert-danger">
+                        {{error|escape}}</div></div>
+                        {% endfor %}
+                        {% endif %}
+        
+                    {% endif %}
+                    </small>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
+<script>
+    $(document).ready(function() {
+        var date_input = $('input[id="date"] ');
+        var container = $('.bootstrap-iso form ').length > 0 ? $('.bootstrap-iso form ').parent() : "body";
+        date_input.datepicker({
+            format: 'yyyy-mm-dd ',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>

@@ -1,0 +1,83 @@
+{% include "inicio/includes/navbar_cliente.html" %}{% load static %}
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel=stylesheet href="{% static 'css/pag.css' %}" type="text/css">
+
+    <title>Pagos</title>
+    <link rel="icon" href="{% static 'imagenes/Iniciativa.png' %}" type="image/png" />
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-8">
+            <div class="container p-4">
+                <form method='POST' autocomplete="off ">
+                    {% csrf_token %}
+                    <div class="card col-10" style='margin-top: 90px;
+                    margin-left: 250px;'>
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">!!Cancela tu deuda pendiente!!</h5>
+                            </center>
+                            <div class="row register-form ">
+
+                                <div class="col-md-6 ">
+                                    <div class="form-group ">
+                                        {{form.fecha}}
+                                    </div>
+                                    <div class="form-group ">
+                                        {{form.precio}}
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="form-group ">
+
+                                    </div>
+                                    <label style='color:blue'>Recuerda que para que se realice el pago  el valor que ingreses debe ser mayor o igual al planteado en la oferta.</label>
+
+
+
+
+
+                                </div>
+                            </div>
+                            <button type="submit" class='btn btn-primary'>Aceptar</button>
+                            <a type="button" class='btn  btn-dark' href='/ver_oferta'>Cancelar</a>
+                        </div>
+
+                        <small class='text-danger'>
+                      
+                            {% if form.errors %}
+                            {% for field in form %}
+                                {% if field.errors %}
+                                {% for error in field.errors %}<div class='container col-md-6 '><div class="alert alert-danger ">{{ error|escape }}</div></div>{% endfor%}
+            
+                                {% endif %}
+                            {% endfor %}
+                            {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}<div class='container col-md-6 '><div class="alert alert-danger ">
+                            {{error|escape}}</div></div>
+                            {% endfor %}
+                            {% endif %}
+            
+                        {% endif %}
+                    
+                        </small>
+                </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+</body>
+
+</html>

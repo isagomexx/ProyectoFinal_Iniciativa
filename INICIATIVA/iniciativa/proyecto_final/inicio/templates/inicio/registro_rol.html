@@ -1,0 +1,18 @@
+{% include "inicio/includes/navbar.html" %}{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="{% static 'css/registroRol.css' %}">
+<div class='container' ;>
+    <div class="cuadro1">
+        <!--<img class="logo" src="imagenes/Iniciativa.png" alt="iniciativa">-->
+        <h1>Escoge tu rol</h1>
+
+        <div class="form">
+
+            <button type="button" class="botonP" onclick="location.href='/registro_profesional' ">Profesional</button>
+
+            <button type=" button " class="botonC " onclick="location.href='/registro' ">Cliente</button>
+
+            <button type="submit " class="botonM " onclick="location.href='/' ">Ir al Menú</button>
+        </div>
+    </div>
+</div>

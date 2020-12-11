@@ -1,0 +1,8 @@
+body {
+    background-image: url('../imagenes/fondoOfertas.png');
+}
+
+.col-md-10 {
+    margin-left: 150px;
+    margin-top: 70px;
+}

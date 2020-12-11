@@ -1,0 +1,156 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/registroProfesional.css' %}" type="text/css " media=" ">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+
+<div class="container register">
+
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="{% static 'imagenes/ini_.png' %}" alt="" />
+            <h3>Bienvenido</h3>
+            <p>¡Aprovecha la oportunidad de encontrar clientes potenciales con nosotros!</p>
+            <button type="button " class='btn' onclick="location.href=' /registro_rol '">Regresar</button>
+        </div>
+
+        <div class="col-md-8 register-right ">
+
+            <form method='POST' autocomplete="off ">
+
+
+                <div class="tab-content " id="myTabContent ">
+                    <div class="tab-pane fade show active " id="home " role="tabpanel " aria-labelledby="home-tab ">
+                        <h3 class="register-heading ">Registro Profesional</h3>
+                        <div class="row register-form ">
+                            <div class="col-md-6 ">
+
+                                {% csrf_token %}
+                                <div class="form-group ">
+                                    {{form.profesional.nro_doc_profesional}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.nombre_profesional}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.apellido_paterno}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.apellido_materno}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.titulo_profesional}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.userProfesional.username}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.userProfesional.password1}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.userProfesional.password2}}
+                                </div>
+
+                                <div class="form-group ">
+
+                                    <div class="maxl ">
+                                        <div class='form-group'>
+                                            {{form.userProfesional.first_name}}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="form-group ">
+                                    {{form.profesional.telefono}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.direccion}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.sexo}}
+                                </div>
+
+                                <div class="form-group ">
+                                    <div class="input-group ">
+                                        <div class="input-group-addon ">
+
+
+                                            </i>
+                                        </div>
+                                        {{form.profesional.fecha_nacimiento}}
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.correo_electronico}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.tiempo_experiencia}}
+                                </div>
+                                <div class="form-group ">
+                                    {{form.profesional.numero_cuenta}}
+                                </div>
+                                <div class="form-group ">
+                                    <label><strong>Servicio a ofrecer</strong></label> <br> {{form.profesional.servicio_a_brindar}} </div>
+
+
+                                <button type="submit " class="btnRegister ">Registrar</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <small class='text-danger'>
+                        {% if form.errors %}
+                        {% for field in form %}
+                            {% if field.errors %}
+                            {% for error in field.errors %}<div class='container col-md-6 '><div class="alert alert-danger ">{{ error|escape }}</div></div>{% endfor%}
+        
+                            {% endif %}
+                        {% endfor %}
+                        {% if form.non_field_errors %}
+                        {% for error in form.non_field_errors %}<div class='container col-md-6 '><div class="alert alert-danger ">
+                        {{error|escape}}</div></div>
+                        {% endfor %}
+                        {% endif %}
+        
+                    {% endif %}
+                    </small>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<script type="text/javascript " src="https://code.jquery.com/jquery-1.11.3.min.js "></script>
+<script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js "></script>
+<link rel="stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css " />
+
+<script>
+    $(document).ready(function() {
+        var date_input = $('input[id="date"]');
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body ";
+        date_input.datepicker({
+            format: 'yyyy-mm-dd',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>

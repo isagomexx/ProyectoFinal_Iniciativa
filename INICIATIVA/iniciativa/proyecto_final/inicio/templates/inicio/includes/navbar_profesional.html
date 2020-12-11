@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">{% load static %}
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel=stylesheet href="{% static 'css/navbarprofesional.css' %}" type="text/css">
+    <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css " integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO " crossorigin="anonymous ">
+
+</head>
+
+<body>
+    <header id='encabezado'>
+        <div class="contenedor">
+
+            <nav class="menu">
+                <img class="logo" src="{% static 'imagenes/iniciativa.png' %}" alt="iniciativa">
+                <img class="usuario" src="{% static 'imagenes/editar-perfil.png' %}">
+                <label class='nombre'>{{user.username}}</label>
+                <label class='correo'></label>
+
+
+            </nav>
+        </div>
+    </header>
+</body>
+
+
+</html>

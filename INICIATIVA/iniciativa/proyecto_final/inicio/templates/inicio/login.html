@@ -1,0 +1,66 @@
+{% include "inicio/includes/navbar.html" %}{% load static %}
+<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type="text/css " media=" ">
+<link rel="stylesheet" href="{% static 'tinymce/css/prism.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<div class="container pt-5">
+    <div class="container pt-4">
+        <div class=" container pt-2  h-100 ">
+
+            <div class="d-flex justify-content-center h-90  p-4">
+
+                <div class="user_card ">
+
+                    <div class="d-flex justify-content-center ">
+                        <div class="brand_logo_container ">
+                            <img src="{% static 'imagenes/logo_iniciativa.png' %}" class="brand_logo " alt="Logo ">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center form_container ">
+                        <form form action='#' method='POST' autocomplete="off">
+                            {% csrf_token %} {{form.rol}}
+                            <br><br>
+                            <div class="input-group mb-3 ">
+
+                                <div class="input-group-append ">
+                                    <span class="input-group-text "><i class="fas fa-user "></i></span>
+                                </div>
+
+                                {{form.username}}
+                            </div>
+                            <div class="input-group mb-2 ">
+                                <div class="input-group-append ">
+                                    <span class="input-group-text "><i class="fas fa-key "></i></span>
+                                </div>
+                                {{form.password}}
+                            </div>
+
+                            <div class="d-flex justify-content-center mt-3 login_container ">
+                                <button type="button " name="button " class="btn login_btn ">Iniciar Sesion</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="mt-4 ">
+                        <div class="d-flex justify-content-center links ">
+                            ¿No tienes una cuenta?
+                            <a href="/registro_rol" class="ml-2 ">Registrate</a>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-center links ">
+                            <a href="/">Regresar al inicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+{% include "inicio/includes/mensajes.html" %}
+<script src="{% static 'tinymce/js/prims.js'%}"></script>
+</body>
+
+</html>

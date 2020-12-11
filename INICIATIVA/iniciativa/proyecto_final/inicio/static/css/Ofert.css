@@ -1,0 +1,11 @@
+html,
+body {
+    background-image: url('../imagenes/fondoOfertas.png');
+}
+
+.atras {
+    width: 41px;
+    float: left;
+    margin-top: 20px;
+    margin-left: -90px;
+}

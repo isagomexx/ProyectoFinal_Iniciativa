@@ -1,0 +1,89 @@
+{% include "inicio/includes/navbar_Cliente.html" %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/enviarOferta.css' %}">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-10" style='margin-left:98px'>
+            <div class="container p-4">
+                <form method='POST' autocomplete="off ">
+                    {% csrf_token %}
+                    <div class="card mb-">
+                        <div class="card-body">
+                            <center>
+                                <h5 class="card-title">Oferta</h5>
+                            </center>
+                            <div class="row register-form ">
+
+                                <div class="col-md-6 ">
+                                    <div class="form-group ">
+                                        {{form.fecha_entrega}}
+                                    </div>
+                                    <div class="form-group ">
+                                        {{form.precio_final}}
+
+                                    </div>
+                                    <div class="col-md-6 ">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    {{form.argumento}}
+                                </div>
+                            </div>
+
+                            <small class='text-danger'>
+                            {% if form.errors %}
+                            {% for field in form %}
+                                {% if field.errors %}
+                                {% for error in field.errors %}<div class='container col-md-6 '><div class="alert alert-danger ">{{ error|escape }}</div></div>{% endfor%}
+            
+                                {% endif %}
+                            {% endfor %}
+                            {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}<div class='container col-md-6 '><div class="alert alert-danger ">
+                            {{error|escape}}</div></div>
+                            {% endfor %}
+                            {% endif %}
+            
+                        {% endif %}
+                        </small>
+                            <button type="submit" class='btn btn-primary'>Enviar</button>
+                            <a type="button" class='btn btn-dark' href='/escoger_proyecto'>Cancelar</a>
+                        </div>
+
+                    </div>
+
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script type="text/javascript " src="https://code.jquery.com/jquery-1.11.3.min.js "></script>
+<script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js "></script>
+<link rel="stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css " />
+
+<script>
+    $(document).ready(function() {
+        var date_input = $('input[id="date"]');
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body ";
+        date_input.datepicker({
+            format: 'yyyy-mm-dd',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>
+
+</html>

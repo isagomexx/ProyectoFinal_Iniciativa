@@ -1,0 +1,142 @@
+{% include "inicio/includes/navbar_cliente.html" %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/publicarProyect.css' %}">
+
+</head>
+
+
+
+<body id='body'>
+
+    <div class="contenedor2">
+        <a href="/plataforma_cliente"><img id="atras" src="{% static 'imagenes/atras.png' %}"></a>
+
+    </div>
+
+    <div class='card-text p-4'>
+        <button type="button" id='registroModal' class="btn btn-primary btn-flat" onclick="location.href='/Nuevo_proyecto'" data-backdrop="false" data-dismiss="modal"><i class="fas fa-plus-square"></i> Añadir proyecto</button>
+
+    </div>
+    <div class='card-header ' style='background-color:white '>
+        <center>
+            <h5 class="card-title" style='color:black'>Publica tus proyectos y conviertete en un emprendedor. </h5>
+
+        </center><br>
+        <h6>* Tus proyectos los veran solo los profesionales que se especializan en el servicio que necesitas.</h6>
+
+    </div>
+    <div class="row">
+        <div class=' card-body '>
+
+            <div class="row">
+                {% for P in object_list %} {% for p in proyecto%} {% for r in P %}{% if r.id_proyecto == p.id_proyecto%}{% if r.id_proyecto not in pago%}
+                <div class="col-sm-6">
+                    <div class="container p-4">
+                        <div class="card border-primary mb-3">
+                            <div class="card-body">
+                                <div class='card-header '>
+                                    <center>
+                                        <h5 class="card-title">{{r.nombre_proyecto|upper}}</h5>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class='p-2'>
+                                            <strong>Nombre del Cliente:</strong><br> {{r.cliente.nombre_cliente}} </div>
+
+
+                                        <div class='p-2'> <strong>Descripcion del proyecto: </strong><br>{{r.descripcion}} </div>
+                                        <div class='p-2'> <strong>Tipo de Proyecto: </strong>
+                                            <br> {{r.tipo_proyecto|cut:"["|cut:"]"|cut:"'"}}
+                                        </div>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <div class='p-2'>
+                                            <strong>Ocupacion: </strong>
+
+                                            <br> {{r.cliente.ocupacion}} </div>
+                                        <div class='p-2'>
+                                            <strong>Servicio: </strong>
+
+                                            <br> {{r.tipo_servicio}} </div>
+                                        <div class='p-2'><strong>Requiere: </strong>
+                                            <br> {{r.persona_solicitada}} </div>
+                                        <div class='p-2'>
+                                            <strong>Precio propuesto: </strong>
+                                            <br> {{r.precio_propuesto}}
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <a type="button" class="btn btnPencil " href="/editar_proyecto/{{ r.id_proyecto }}"><i class="fas fa-pen-alt " ></i></a>
+                                <!--  -->
+                                <a type="button" class="btn btn-danger " href="/eliminar_proyecto/{{ r.id_proyecto }}"><i class="fas fa-trash-alt"></i></a>
+                                <!--  data-toggle="modal" data-target="#Modal" -->
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                {% endif %}{% endif %} {% endfor %} {% endfor %} {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id='Modal' tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar eliminacion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estas seguro que deseas eliminar esta publicacion?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <a type="button" class="btn btn-primary" href='/eliminar_proyecto/{{id_p}}'>Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js " integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=" anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js " integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn " crossorigin="anonymous "></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js "></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx " crossorigin="anonymous "></script>
+
+<script type="text/javascript">
+    $(function() {
+
+        $('.btneliminar').on('click', function() {
+            $('#Modal').modal('show');
+        });
+    });
+</script>
+
+
+</html>

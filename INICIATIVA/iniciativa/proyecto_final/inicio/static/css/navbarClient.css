@@ -1,0 +1,59 @@
+.contenedor {
+    max-width: 1367px;
+    margin: -10px;
+    margin-left: -9px;
+}
+
+#menu,
+.conten {
+    height: 100px;
+}
+
+.logo {
+    padding: 8px;
+    margin: 12px;
+    float: left;
+    height: 93px;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+.usuario {
+    width: 90px;
+    height: 85px;
+    float: right;
+    margin-top: 8px;
+    border: 6px solid #fff;
+    border-radius: 200px;
+    margin-right: 10px;
+    /* background-image: url('../imagenes/usuario.png') */
+}
+
+.nombre {
+    float: right;
+    width: 204px;
+    margin-right: 35px;
+    margin-top: 36px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 22px;
+}
+
+.correo {
+    float: right;
+    width: 204px;
+    margin-right: -208px;
+    margin-top: 40px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 17px;
+}
+
+::-webkit-input-placeholder {
+    color: #FFF;
+}
+
+#confi {
+    margin-left: 1300px;
+    margin-top: 200px;
+}

@@ -1,0 +1,19 @@
+html,
+body {
+    height: 785px;
+    background-image: url('../imagenes/fondoPagos.png')
+}
+
+#registroModal {
+    background-color: white;
+    color: rgb(9, 59, 224);
+    margin-left: 1120px;
+    margin-top: 20px;
+}
+
+.atras {
+    width: 41px;
+    float: left;
+    margin-top: 35px;
+    margin-left: -85px;
+}

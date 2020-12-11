@@ -1,0 +1,159 @@
+{% include "inicio/includes/navbar_cliente.html" %}{% load static %}
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <link rel=stylesheet href="{%  static 'css/Ofert.css' %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css " integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO " crossorigin="anonymous ">
+
+
+
+    <title>Ver oferta</title>
+    <link rel="icon" href="{% static 'imagenes/Iniciativa.png' %}" type="image/png" />
+</head>
+
+<body>
+    <div class='container p-4'>
+        <div class="contenedor2">
+            <a href="/plataforma_cliente"><img class="atras" src="{% static 'imagenes/atras.png' %}"></a>
+
+        </div>
+    </div>
+    <div class='container p-4'>
+
+    </div>
+
+    <div class='card-header ' style='background-color:rgba(255, 255, 255, 0.748) '>
+        <center>
+            <h5 class="card-title" style='color:black'>Observa las ofertas que te envian nuestros profesionales y elige la que mas de adapte a tus necesidades . </h5>
+
+        </center><br>
+
+
+    </div>
+    <!-- <header id='encabezado'>
+        <div id="contenedor">
+
+            <nav class="menu">
+                <img class="logo" src="{% static 'imagenes/Iniciativa.png' %}" alt="iniciativa">
+                <img class="usuario" src="{% static 'imagenes/editar-perfil.png' %}">
+                <center><label class='nombre'>{{user.username}}</label></center>
+            </nav>
+        </div>
+    </header> -->
+    <div class="row">
+        <div class=' card-body '>
+
+            <div class="row"> {% for P in object_list %} {% for L in list_pro %}{% for r in P %} {% if r.proyecto.id_proyecto == L.id_proyecto %}{% if r.estado != 2 %}
+
+                <div class="col-sm-6">
+                    <div class="container p-4">
+                        <div class="card border-primary mb-3 ">
+                            <div class="card-body " id='tarjeta '>
+                                <div class='card-header '>
+
+                                    <center>
+                                        <h5 class="card-title ">OFERTA: {{r.profesional.nombre_profesional}} {{r.profesional.apellido_materno}} {{r.profesional.apellido_paterno}}</h5>
+                                    </center>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-6 ">
+                                        <div class='p-2 '>
+                                            <strong>Nombre del proyecto:</strong><br> {{r.proyecto.nombre_proyecto}} </div>
+
+
+                                        <div class='p-2 '>
+                                            <strong>Titulo Profesional:</strong><br> {{r.profesional.titulo_profesional}} </div>
+
+                                        <div class='p-2 '> <strong>Correo: </strong>
+                                            <br> {{r.profesional.correo_electronico}}
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+
+
+                                        <div class='p-2 '>
+                                            <strong>Descripcion de oferta:</strong><br> {{r.argumento}} </div>
+
+                                        <div class='p-2 '> <strong>precio final: </strong><br>{{r.precio_final}} </div>
+                                        <div class='p-2 '> <strong>fecha propuesta para entrega: </strong>
+                                            <br> {{r.fecha_entrega}}
+                                        </div>
+
+                                    </div>
+
+                                    <div class='container p-4 '>{% if r.estado != 1%}<button type="button " class="btn btn-primary btnAceptar " onclick="location.href='/enviar_correo/{{r.profesional.correo_electronico}}/{{r.proyecto.id_proyecto}}/{{r.profesional.id_profesional}}/{{r.id_oferta}} '">Aceptar</button>                                        <a type="button " class="btn btn-danger " href="/eliminar_oferta/{{ r.id_oferta }}/{{r.profesional.id_profesional}}/{{r.proyecto.id_proyecto}} ">Rechazar</a> {% endif %}{% if r.estado == 1 %} <a type="button " class="btn btn-primary "
+                                            href="/realizar_pago/{{r.proyecto.id_proyecto}}/{{r.profesional.id_profesional}}/{{r.id_oferta}} ">
+                                       Realizar pago
+                            </a> {%endif%}
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                {% endif %} {% endif %}{% endfor %} {% endfor %} {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    {% if msg == True %}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¡¡Excelente!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body ">
+                    Hemos enviado un correo al profesional confirmandole que has aceptado su oferta, espera su pronta respuesta. <br>Si deseas contactarte con el directamente puedes hacerlo usando el correo electronico que se encuentra en la descripcion
+                    de la oferta.
+                    <br>Realiza tu pago en la opcion que se te habilitara a continuacion. Esperamos que realices tu proyecto con exito. </div>
+                <div class="modal-footer ">
+                    <button type="button " class="btn btn-primary " onclick="location.href='/ver_oferta ' ">Ok</button>
+
+
+                    <!-- data-dismiss="modal " -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx " crossorigin="anonymous "></script>
+    <script>
+        $(function() {
+            $('#exampleModal').modal('show', {
+                backdrop: 'static',
+                keyboard: false
+            });
+            $('#exampleModal').on('hide.bs.modal', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        });
+    </script>
+    {% endif %}
+
+
+
+
+
+
+</body>
+
+
+</html>

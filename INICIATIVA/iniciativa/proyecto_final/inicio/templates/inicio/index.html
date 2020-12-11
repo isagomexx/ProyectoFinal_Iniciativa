@@ -1,0 +1,398 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet href="{% static 'css/index.css' %}" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!--REDIRECCIONES-->
+
+
+    <title>Iniciativa</title>
+    <link rel="icon" href="{% static 'imagenes/Iniciativa.png' %}" type="image/png" /> '
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Primero cargamos Jquery -->
+
+
+
+    <!-- Creamos nuestra función -->
+
+
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var altura = $('.menu').offset().top;
+
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > altura) {
+                    $('.menu').addClass('menu-fixed');
+                } else {
+                    $('.menu').removeClass('menu-fixed');
+                }
+            });
+
+        });
+
+        $(".accordion-titulo").click(function() {
+
+            var contenido = $(this).next(".accordion-content");
+
+            if (contenido.css("display") == "none") { //open		
+                contenido.slideDown(250);
+                $(this).addClass("open");
+            } else { //close		
+                contenido.slideUp(250);
+                $(this).removeClass("open");
+            }
+
+        });
+    </script>
+
+    <header>
+        <div class="contenedor1">
+
+            <nav class="menu">
+                <img class="logo" src="{% static 'imagenes/Iniciativa.png' %}" alt="iniciativa">
+                <button type="button" class="boton1" onclick="location.href = '/login'">Iniciar Sesión</button>
+                <button type="button" class="boton2" onclick="location.href = '/registro_rol'">Registrarse</button>
+                <ul>
+                    <li><a href="#Home">INICIO</a></li>
+                    <li><a href="#Home2">¿QUÉ OFRECEMOS?</a></li>
+                    <li><a href="#Home3">¿CÓMO SER PARTE?</a></li>
+                    <li><a href="#Home4">¿POR QUÉ SER PARTE?</a></li>
+                    <li><a href="#Home5">PQRS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+    <div class="contenedor1">
+        <!--Carousel-->
+        <section id="Home">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="
+    top: -50px;">
+                        <ol class=" carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <br><br>
+                                <h2 class="titulo1"> ¿Sabías que<span> INICIATIVA </span> ofrece servicios mucho más economicos que otras páginas web? </h2>
+
+                                <!--<img class="d-block img-fluid" src="imagenes/Imagen%20util%20para%20encabezado.jpg" alt="First slide">-->
+                            </div>
+                            <div class="carousel-item">
+                                <br><br>
+                                <h2 class="titulo1"> <span> INICIATIVA </span> es un sistema creado para aquellas personas que quieran hacer parte de la nueva era digital </h2>
+                                <!--<img class="d-block img-fluid" src="imagenes/python_cap.PNG" alt="Second slide">-->
+                            </div>
+                            <div class="carousel-item">
+                                <br><br>
+                                <h2 class="titulo1"> Dentro de <span> INICIATIVA </span> puedes encontrar muchas oportunidades de empleo y hacer realidad tu idea de proyecto </h2>
+                                <!--<img class="d-block img-fluid" src="imagenes/Imagen%20util%20para%20encabezado.jpg" alt="Third slide">-->
+                            </div>
+                            <hr>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" color=grey aria-hidden="true"></span>
+                            <!--<span class="sr-only">Previous</span>-->
+                        </a>
+
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <!--<span class="sr-only">Next</span>-->
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!--end carousel-->
+
+    <section id="Home2">
+
+        <div class="contenedor2">
+            <div class="block1">
+                <div class="brand_logo_container">
+                    <img class="iconoUs" src="{% static 'imagenes/usuario.png' %}">
+                </div>
+                <h1>Solo necesito una persona </h1>
+
+                <p>En
+                    <strong>INICIATIVA</strong> puedes solicitar a un solo profesional para que te ayude a realizar lo que le falta a tu proyecto, puedes escoger un diseñador, programador web o movil.</p>
+
+
+            </div>
+            <div class="block2">
+                <p>Puedes escoger un equipo de trabajo, seleccionar a un profesional para una tarea en especifico o solicitar una asesoria
+                    <br><br>
+                    <img class="iconoI" src="{% static 'imagenes/iconoInicio.PNG' %}" alt="iniciativaIcon">
+
+                </p>
+
+            </div>
+            <div class="block3">
+                <div class="brand_logo_container2">
+                    <img class="iconoGr" src="{% static 'imagenes/grupo.png' %}">
+                </div>
+                <h1>Solo necesito un equipo</h1>
+
+                <p>En <strong>INICIATIVA</strong> puedes solicitar un equipo de trabajo para desarrollar tu proyecto y puedes escoger el tipo de profesionales que necesitas para hacerlo realidad</p>
+            </div>
+            <!--<img class="iconoE" src="imagenes/IconoEquipo.png">
+					Iconos diseñados por
+					<a href="http://www.freepik.com/" title="Freepik">Freepik</a>
+					from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a>
+-->
+
+        </div>
+        <div class="contenedor1-2">
+            <div class="block4">
+                <div class="brand_logo_container3">
+                    <img class="iconoAs" src="{% static 'imagenes/Asesorias.png' %}">
+                </div>
+                <h1>Solo necesito una asesoría </h1>
+                <p>En <strong> INICIATIVA</strong> puedes solicitar una asesoria de acuerdo a tu necesidad para que tu proyecto sea mucho mas completo
+                </p>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <section id="Home3">
+        <h1>¿CÓMO SER PARTE?</h1>
+        <div class="contenedor3">
+
+            <div class="cuadrado1">
+                <div class="cuadrado1-1">
+                    <h2>PROFESIONALES</h2>
+                </div>
+                <img class="iconoDes" src="{% static 'imagenes/desarrollador.png' %}">
+
+
+                <p>Debes estar registrado dentro de nuestro sitio, tener conocimientos en Desarrollo web, movil o diseño gráfico, disponibilidad de tiempo y responsabilidad con los proyectos de tus clientes.
+                    <br><br> ¡¡Y listo, puedes ser parte de nuestra plataforma!!
+                </p>
+
+
+            </div>
+            <div class="cuadrado2">
+                <div class="cuadrado2-1">
+                    <h2>CLIENTES</h2>
+                </div>
+                <img class="iconoCli" src="{% static 'imagenes/idea.png' %}">
+
+
+                <p>Debes contar con una idea de proyecto, ser responsable con tus pagos y tener un buen manejo de nuestra plataforma <br><br> !!Y listo puedes ser parte de nuestra plataforma!!.</p>
+
+            </div>
+
+        </div>
+        <hr>
+    </section>
+
+
+    <section id="Home4">
+        <h1>¿POR QUÉ SER PARTE?</h1>
+        <div class="contenedor4">
+
+            <div class="cuadro1">
+                <h4>Ventajas de los profesionales que trabajan con nuestro sitio </h4>
+                <div class="cuadro1-1">
+                    <div class="division">
+                        <h3>VENTAJAS</h3>
+                        <br>
+                        <ul>
+                            <li>Mayor seguridad </li>
+                            <li>Buena estabilidad financiera</li>
+                            <li>Más experiencia laboral</li>
+                            <li>Poder tener un mejor manejo de su tiempo</li>
+                        </ul>
+                    </div>
+                    <div class="division1">
+                        <!--    <h3>DESVENTAJAS</h3>
+                        <br>
+                        <ul>
+                            <li>Desventaja1</li>
+                            <li>Desventaja2</li>
+                            <li>Desventaja3</li>
+                            <li>Desventaja4</li>
+                        </ul>-->
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="cuadro2">
+                <h4>Ventajas de las personas que buscan ayuda con nuestro sitio </h4>
+                <div class="cuadro2-1">
+                    <div class="division2">
+                        <h3>VENTAJAS</h3>
+                        <br>
+                        <ul>
+                            <li>Visibilidad a la imagen de su empresa</li>
+                            <li>Potenciar su negocio en el area comercial</li>
+                            <li>Fortalecer la idea de su proyecto (Con la opción de asesoria)</li>
+                            <li>Oportunidad de crecer laboral y empresarialmente</li>
+                        </ul>
+                    </div>
+                    <div class="division2-1">
+                        <!--     <h3>DESVENTAJAS</h3>
+                        <br>
+                        <ul>
+                            <li>Desventaja1</li>
+                            <li>Desventaja2</li>
+                            <li>Desventaja3</li>
+                            <li>Desventaja4</li>
+                        </ul>
+                    </div>-->
+                    </div>
+
+                </div>
+
+            </div>
+            <hr>
+    </section>
+
+
+
+
+
+    <section id="Home5">
+        <h1>PREGUNTAS FRECUENTES</h1>
+        <div class="contenedor5">
+
+            <div class="subapartado">
+
+                <div class="titulo">
+                    <p class="titulo">¿QUÉ PUEDE OFRECERME ESTA PLATAFORMA WEB? </p>
+                </div>
+
+                <div class="info">
+                    <p class="info">Esta plataforma puede ofrecer diferentes oportunidades, como lo es un trabajo rentable en el área de sofware y llevar a cabo un proyecto o idea de negocio que tengas como cliente. </div>
+
+            </div>
+
+            <div class="subapartado">
+
+                <div class="titulo">
+                    <p class="titulo">¿ESTA PLATAFORMA WEB ES CONFIABLE?</p>
+                </div>
+
+                <div class="info">
+                    <p class="info">Sí, totalmente confiable, como pagina web constituida brindamos la seguridad necesaria para nuestros usuarios.
+                </div>
+
+            </div>
+
+            <div class="subapartado">
+
+                <div class="titulo">
+                    <p class="titulo">¿EN QUÉ PUEDE BENEFICIARME ESTE PRODUCTO/SERVICIO?</p>
+                </div>
+
+                <div class="info">
+                    <p class="info">Beneficia a toda la industria en general ya que proporciona varias ventajas que son necesarias a la hora de formar parte del desarrollo de software. Es un servicio que tú como trabajador independiente o empresa constituida necesitas
+                        para crecer y hacerte más visible en el mercado digital</div>
+
+            </div>
+
+
+
+            <div class="subapartado">
+
+                <div class="titulo">
+                    <p class="titulo">¿CUÁNTO DINERO NECESITO PARA QUE DESARROLLEN MI PROYECTO?</p>
+                </div>
+
+                <div class="info">
+                    <p class="info">Manejamos precios asequibles para cualquier cliente basándonos en buscar suplir todas las necesidades, anímate y registrate no te vas a arrepentir.</div>
+
+            </div>
+
+        </div>
+        <hr>
+
+        <div class="contenedor6">
+            <div class="Redes">
+                <a href="https://www.facebook.com/"><img class="icono" src="{% static 'imagenes/facebook.png' %}"></a>
+            </div>
+
+            <div class="Redes">
+                <a href="https://www.instagram.com/"><img class="icono" src="{% static 'imagenes/instagram.png' %}"></a>
+
+            </div>
+            <div class="Redes">
+                <a href="https://twitter.com/"><img class="icono" src="{% static 'imagenes/twitter.png' %}"></a>
+            </div>
+            <div class="nosotras">
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    {% if msg == True %}
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¡¡Excelente!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    Tu Cuenta ha sido creada con exito...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="location='/login'">Iniciar sesion</button>
+                    <button type="button" class="btn btn-secondary" onclick="location='/registro_rol'">Volver al Registro</button>
+                    <!-- data-dismiss="modal" -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('#exampleModal').modal('show');
+        });
+    </script>{% endif %}
+</body>
+
+</html>

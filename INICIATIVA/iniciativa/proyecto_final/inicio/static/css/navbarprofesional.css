@@ -1,0 +1,194 @@
+html,
+body {
+    height: 648px;
+}
+
+.contenedor {
+    max-width: 1367px;
+    margin: -8px;
+    margin-left: -9px;
+}
+
+header nav {
+    /*background-image: url(imagenes/FondoNav.png);*/
+    background: linear-gradient(#f0eaead2, #ffffffb9);
+    margin-bottom: 10px;
+    margin: 0px;
+    height: 130px;
+    width: 1390px;
+}
+
+.logo {
+    padding: 15px;
+    margin-left: 1px;
+    float: left;
+    height: 120px;
+    margin-left: 1px;
+}
+
+.usuario {
+    width: 120px;
+    height: 100px;
+    float: right;
+    margin-right: 24px;
+    margin-top: 12px;
+    border: 6px solid #fff;
+    border-radius: 23px;
+    margin-top: 25px;
+}
+
+.nombre {
+    float: right;
+    width: 204px;
+    margin-right: -58px;
+    margin-top: 50px;
+    background-color: transparent;
+    border: black;
+    font-size: 19px;
+}
+
+.correo {
+    float: right;
+    width: 204px;
+    margin-right: -202px;
+    margin-top: 76px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 19px;
+}
+
+.proyectos {
+    float: right;
+    width: 204px;
+    margin-right: -208px;
+    margin-top: 83px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 17px;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+}
+
+
+/* WebKit */
+
+.contenedor2 {
+    margin-top: 8px;
+    margin-left: -8px;
+}
+
+.cuadro1 {
+    float: left;
+    width: 270px;
+    height: 213px;
+    margin: 37px;
+    margin-left: 256px;
+    margin-top: 102px;
+    background: linear-gradient(198deg, #a384fa, #eea8ff);
+    box-shadow: 5px 7px 16px #999;
+}
+
+.cuadro2 {
+    float: left;
+    width: 270px;
+    height: 213px;
+    margin: 37px;
+    margin-left: 256px;
+    margin-top: 102px;
+    background: linear-gradient(198deg, #cc80fa, #dfb6b4);
+    box-shadow: 5px 7px 16px #999;
+}
+
+.boton1 {
+    color: #5f068dee;
+    font-weight: 560;
+    border: 1.5px solid #5f068dee;
+    border-radius: 6px;
+    float: right;
+    width: 274px;
+    height: 44px;
+    padding: 10px 0px;
+    position: relative;
+    top: -26px;
+    left: 2px;
+    font-size: 20px;
+    line-height: 20px;
+    background: linear-gradient(181deg, #b174e1bf, #ffb0f2);
+    box-shadow: 5px 7px 16px #999;
+    cursor: pointer
+}
+
+.boton1:hover {
+    color: white;
+    border: 2px solid #FFF;
+}
+
+.proyecto {
+    margin-left: -99px;
+    width: 478px;
+    margin-top: -30px;
+}
+
+.boton2 {
+    color: #5f068dee;
+    font-weight: 560;
+    border: 1.5px solid #5f068dee;
+    border-radius: 6px;
+    float: right;
+    width: 274px;
+    height: 44px;
+    padding: 10px 0px;
+    position: relative;
+    top: 10px;
+    left: 2px;
+    font-size: 20px;
+    line-height: 20px;
+    background: linear-gradient(179deg, #b691ca, #dfb6b4);
+    box-shadow: 5px 7px 16px #999;
+    cursor: pointer
+}
+
+.boton2:hover {
+    color: white;
+    border: 2px solid #FFF;
+}
+
+.asesoria {
+    margin-left: 43px;
+    width: 183px;
+    height: 193px;
+    margin-top: 10px;
+}
+
+.salida {
+    width: 61px;
+    float: right;
+    margin-top: 145px;
+    margin-right: -100px;
+    cursor: pointer
+}
+
+.chat {
+    width: 53px;
+    float: left;
+    margin-top: 160px;
+    margin-left: -80px;
+    cursor: pointer
+}
+
+.notificacion {
+    width: 48px;
+    float: left;
+    margin-top: 227px;
+    margin-left: -80px;
+    cursor: pointer
+}
+
+.atras {
+    height: 50px;
+    margin-top: 32px;
+    cursor: pointer;
+    margin-left: 20px;
+}

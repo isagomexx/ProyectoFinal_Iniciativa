@@ -1,0 +1,88 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('../imagenes/Fon.png')!important;
+}
+
+.user_card {
+    height: 500px;
+    width: 375px;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #ffffffe3;
+    padding: 10px;
+    box-shadow: 1px 3px 10px rgb(188 142 202);
+    border-radius: 5px;
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: #aa68d1c7;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(249, 249, 253);
+}
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid rgb(249, 249, 253);
+}
+
+.form_container {
+    margin-top: 100px;
+}
+
+.login_btn {
+    width: 100%;
+    background: #ad42eb!important;
+    color: white !important;
+}
+
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.login_container {
+    padding: 0 2rem;
+}
+
+.input-group-text {
+    background: #a21bf09c !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+    float: right;
+}
+
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #c03928 !important;
+}
+
+#usuario::placeholder,
+#contraseña::placeholder,
+#nombre_usuario,
+#salir,
+#iniciar_sesion,
+#registro {
+    color: black;
+    font-weight: normal;
+}

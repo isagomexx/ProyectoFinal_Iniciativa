@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+
+<head>
+    <title>Bienvenido a Iniciativa</title>
+    <link rel="stylesheet " href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css " integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO " crossorigin="anonymous ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "></script>
+    <link rel="stylesheet " href="https://use.fontawesome.com/releases/v5.6.1/css/all.css " integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP " crossorigin="anonymous ">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+
+    <div class="container register" style='background: -webkit-linear-gradient(left, #2698e4, #93e2f8);
+    margin-top: 3%;
+    padding: -10%;height: 400px;'>
+
+        <div class="container p-4" style='margin-top:100px'>
+            <div class="col-md-3 register-left" style='text-align: center;
+            color: #fff;
+            margin-top: 10%;'>
+                <h3 style=' margin-top: 10px;'>!Buenas noticias!</h3>
+                <h5>Uno de nuestros clientes a contestado tu oferta</h5>
+            </div>
+
+            <div class="col-md-8 register-right" style=' background: #f8f9fa;margin:50px;margin-top:30px
+          '>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row register-form" style=' padding: 5%; '>
+                            <h4> Hola {{profesional.nombre_profesional}} {{profesional.apellido_paterno}} {{profesional.apellido_materno}}
+                            </h4>
+                            <p>te informamos que tu oferta para trabajar con el proyecto <strong>{{proyecto.nombre_proyecto}}</strong> ha sido aceptada , te invitamos ha que te comuniques con tu cliente al siguiente correo: {{cliente.correo_electronico}}</p>
+                            <p>Sigue aprovechando nuestro servicio para que aumenten tus posibilidades de encontrar clientes potenciales</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+
+</html>
